@@ -12,10 +12,10 @@ class FlyingDragon(Dragon):
             random_damage = randrange(5,9)
             hero.take_damage(random_damage)
             self._swoops -= 1
-            return f"Fire dragon just delt {random_damage} with its special attack"
+            return f"{self._name} just delt {random_damage} with its special attack to the hero"
             
         else:
-            return f"Fire dragon delt zero damage because its out of swoops"
+            return f"{self._name} just delt zero damage because its out of swoops"
         
     def __str__(self):
-        return f"{super().__str__()}\n  Swoops Left: {self._swoops}"
+        return f"{super().__str__()}\n   - Swoops Left: {self._swoops}"

@@ -13,10 +13,10 @@ class FireDragon(Dragon):
             random_damage = randrange(6,10)
             hero.take_damage(random_damage)
             self._fire_shots -= 1
-            return f"Fire dragon just delt {random_damage} with its special attack"
+            return f"{self._name} just delt {random_damage} with its special attack to the hero"
             
         else:
-            return f"Fire dragon delt zero damage because its out of fire shots"
+            return f"{self._name} delt zero damage because its out of fire shots"
         
     def __str__(self):
-        return f"{super().__str__()}\n  Fire Shots Left: {self._fire_shots}"
+        return f"{super().__str__()}\n   - Fire Shots Left: {self._fire_shots}"

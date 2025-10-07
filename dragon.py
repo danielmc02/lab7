@@ -8,9 +8,9 @@ class Dragon(Entity):
         #takes a random amount of damage in the range 2-5
         damage = randrange(2,6)
         hero.take_damage(damage)
-        return f"Your basic attack damaged the hero by {damage} points"
+        return f"{self._name} used it's basic attack, damaging the hero by {damage} points"
     
     def special_attack(self, hero):
         damage = randrange(3,8)
         hero.take_damage(damage)
-        return f"Your special attack damaged the hero by {damage} points"
+        return f"{self._name} used it's special attack, damaging the hero by {damage} points"
