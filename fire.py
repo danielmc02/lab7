@@ -3,20 +3,24 @@ from random import randrange
 from entity import Entity
 
 class FireDragon(Dragon):
+    """Dragon that breathes fire a limited number of times."""
+
     def __init__(self, name, hp):
-        self._fire_shots = 10
+        """Create a FireDragon and set the number of fire shots."""
+        self._fire_shots = 2
         super().__init__(name=name, max_hp=hp)
 
     def special_attack(self, hero:Entity):
-        # ? Has any fire shots left?
+        """Fire breath: 6-9 damage if shots remain; otherwise no damage."""
         if self._fire_shots > 0:
-            random_damage = randrange(6,10)
-            hero.take_damage(random_damage)
+            dmg = randrange(6,10)
+            hero.take_damage(dmg)
             self._fire_shots -= 1
-            return f"{self._name} just delt {random_damage} with its special attack to the hero"
+            return f"{self.name} engulfs you in flames for {dmg} damage!"
             
         else:
-            return f"{self._name} delt zero damage because its out of fire shots"
+            return f"{self.name} tries to spit fire at you but is all out of fire shots."
         
     def __str__(self):
-        return f"{super().__str__()}\n   - Fire Shots Left: {self._fire_shots}"
+        """Displays number of remaining fire shots."""
+        return f"{super().__str__()}\nFire Shots remaining: {self._fire_shots}"
